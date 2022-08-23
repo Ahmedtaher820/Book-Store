@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     popularBook() {
-      return ts
+      return this.$store.state.books
     },
     showLoader() {
       return this.$store.state.showLoader;

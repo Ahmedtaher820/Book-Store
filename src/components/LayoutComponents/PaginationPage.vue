@@ -30,7 +30,7 @@ export default {
       }
       this.lastInd = maxCurr + 4;
     },
-  }, 
+  },
   mounted() {
     this.getNumbers(this.$route.params.id);
   },
