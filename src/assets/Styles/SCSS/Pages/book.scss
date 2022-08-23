@@ -4,6 +4,11 @@
 @import "../Layouts/navbar";
 @import "../Layouts/links";
 .book-page{
+    >div{
+        @include media(mobile){
+            flex-direction: column;
+        }
+    }
      .book-img{
         img{
             width: 100%;

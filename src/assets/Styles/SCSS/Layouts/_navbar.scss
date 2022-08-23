@@ -2,9 +2,13 @@
     padding: 32px 0px;
     @include media(mobile) {
         padding: 16px 0px;
+        flex-direction: column;
     }
     form {
         position: relative;
+        @include media(mobile) {
+            width: 100%;
+        }
         input {
             color: #333;
         }

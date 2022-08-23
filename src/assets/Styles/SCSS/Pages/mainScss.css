@@ -34,11 +34,21 @@ body {
 @media (max-width: 767px) {
   .nav {
     padding: 16px 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
 .nav form {
   position: relative;
+}
+
+@media (max-width: 767px) {
+  .nav form {
+    width: 100%;
+  }
 }
 
 .nav form input {
