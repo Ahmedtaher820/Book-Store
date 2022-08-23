@@ -34,7 +34,7 @@ export default createStore({
         return;
       }
       try {
-        let bookReq = await axios.get("http://gutendex.com/books/");
+        let bookReq = await axios.get("https://gutendex.com/books/");
         console.log(bookReq);
         commit("setAllBookInfo", bookReq.data.results);
         localStorage.setItem("popBook", JSON.stringify(bookReq.data.results));
@@ -46,8 +46,7 @@ export default createStore({
     async getBookInfo({ commit, state }, payload) {
       state.showLoader = true;
       try {
-        let bookInfo = await axios.get(`http://gutendex.com/books/${payload}`);
-        console.log(bookInfo.data);
+        let bookInfo = await axios.get(`https://gutendex.com/books/${payload}`);
         commit("setBookInfo", bookInfo.data);
         state.showLoader = false;
       } catch (error) {
@@ -81,7 +80,7 @@ export default createStore({
         state.showLoader = false;
       } catch (error) {
         state.showLoader = true;
-        console.log(error)
+        console.log(error);
       }
     },
   },

@@ -15,7 +15,7 @@ export default {
   components: {
     buildLibrary,Popular
   },
-  mounted() {
+  created() {
     this.$store.dispatch("getAllBookInfo");
   },
 };
