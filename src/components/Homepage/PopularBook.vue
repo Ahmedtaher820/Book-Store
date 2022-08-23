@@ -6,7 +6,6 @@
       </li>
     </ul>
     <router-link class="btn view-all" :to="{ path: `/allBooks/${1}` }">View All</router-link>
-
   </div>
 </template>
 
@@ -19,8 +18,7 @@ export default {
   },
   methods:{
     bookPage(id){
-      let imgSrc = event.target.firstElementChild.firstElementChild.src
-      console.log(imgSrc)
+      let imgSrc = event.target.firstElementChild.firstElementChild.firstElementChild.src
       localStorage.setItem("imgSrc",JSON.stringify(imgSrc))
       this.$router.push({path:`/book/${id}`})
     }

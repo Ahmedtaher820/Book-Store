@@ -21,18 +21,16 @@ export default {
     Pagination,
   },
   mounted() {
-    console.log(this.$route.params.id);
     this.$store.dispatch("booksWithNumPage", this.$route.params.id);
   },
   methods: {
     checkMyRouter() {
-      this.$router.push(this.$route.path)
       this.$store.dispatch("booksWithNumPage", this.$route.params.id);
     },
   },
   computed: {
     popularBook() {
-      return this.$store.state.books;
+      return ts
     },
     showLoader() {
       return this.$store.state.showLoader;

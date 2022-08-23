@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card-header">
-      <img :src="this.selected" alt="Book" />
+      <img :src="this.selected" alt="Book" ref="img" />
     </div>
     <div class="card-content flex flex-col gap-1">
       <span class="font-semibold">{{ book.title }}</span>

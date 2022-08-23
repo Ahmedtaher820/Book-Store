@@ -18,6 +18,9 @@
             border-radius: 20px;
             padding-top: 10px;
             cursor: pointer;
+            >div{
+                pointer-events: none;
+            }
             .card-header {
                 pointer-events: none;
                 img {

@@ -458,6 +458,10 @@ nav .burger.active span:nth-child(3) {
   cursor: pointer;
 }
 
+.popular .book-pop .card > div {
+  pointer-events: none;
+}
+
 .popular .book-pop .card .card-header {
   pointer-events: none;
 }
