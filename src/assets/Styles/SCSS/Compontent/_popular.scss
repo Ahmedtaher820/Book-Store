@@ -1,0 +1,44 @@
+.popular {
+    .title {
+        svg {
+            cursor: pointer;
+        }
+    }
+    .book-pop {
+        display: flex;
+        flex-flow: row nowrap;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .card {
+            min-width: 200px;
+            margin-right: 40px;
+            border-radius: 20px;
+            padding-top: 10px;
+            cursor: pointer;
+            .card-header {
+                pointer-events: none;
+                img {
+                    border-radius: 20px;
+                    width: 100%;
+                    height: 200px;
+                }
+            }
+            .card-content {
+                pointer-events: none;
+                padding: 5px 10px;
+                span {
+                    font-size: 14px;
+                    display: block;
+                }
+                .rate {
+                    svg:not(:last-child) {
+                        fill: $maincolor;
+                    }
+                }
+            }
+        }
+    }
+}

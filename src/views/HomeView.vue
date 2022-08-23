@@ -1,18 +1,22 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <buildLibrary />
+    <Popular />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import "../assets/tailwind.css"
+import buildLibrary from "../components/Homepage/BuildLibrary";
+import Popular from "../components/Homepage/Popular"
+import "../assets/Styles/SCSS/Pages/mainScss.css"
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
-    HelloWorld
-  }
-}
+    buildLibrary,Popular
+  },
+  mounted() {
+    this.$store.dispatch("getAllBookInfo");
+  },
+};
 </script>

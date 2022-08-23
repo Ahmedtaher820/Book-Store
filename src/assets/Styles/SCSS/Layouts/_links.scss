@@ -1,0 +1,141 @@
+nav {
+    position: relative;
+    padding: 28px 0px;
+
+    @include media(mobile){
+        padding: 16px 0px;
+    }
+    ul {
+        flex-direction: row;
+        @include media(mobile) {
+            position: fixed;
+            top: 50%;
+            left: 0px;
+            z-index: 999;
+            flex-direction: column;
+            background-color: $maincolor;
+            color: white;
+            margin-right: 0px !important;
+            border-radius: 0px 10px 10px 0px;
+            padding: 20px 10px;
+            box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.6);
+            transform: translateX(-100%);
+            opacity: 0;
+            pointer-events: none;
+            @include transition(all , .3s);
+            &.active {
+                transform: translate(0%,-50%);
+                opacity: 1;
+                pointer-events: auto;
+            }
+            li {
+                margin: 0px 0px 20px 0px !important;
+                width: 100%;
+                padding: 5px 10px;
+                background-color: transparent;
+                a {
+                    width: 100%;
+                }
+                &::after {
+                    background-color: white !important;
+                }
+            }
+        }
+        li {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 0%;
+                transform: translateX(-50%);
+                width: 5px;
+                height: 5px;
+                background-color: $maincolor;
+                border-radius: 50%;
+                opacity: 0;
+                @include transition(all, 0.3s);
+            }
+            &:hover::after,
+            &.active::after {
+                left: 50%;
+                opacity: 1;
+            }
+            a {
+                font-size: 17px;
+            }
+        }
+    }
+    .close-icon{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        cursor: pointer;
+        display: none;
+        @include media(mobile){
+            display: block;
+        }
+    }
+    .burger {
+        display: none;
+        margin-right: auto;
+        cursor: pointer;
+        @include media(mobile) {
+            display: block;
+            animation: burgerDisplay 0.5s both ease-in-out;
+        }
+        span {
+            width: 40px;
+            height: 3px;
+            background-color: $maincolor;
+            display: block;
+            pointer-events: none;
+            &:not(:nth-child(3)) {
+                margin-bottom: 5px;
+            }
+            &:nth-child(2) {
+                animation-delay: 0.8s;
+            }
+            &:nth-child(3) {
+                animation-delay: 1.5s;
+            }
+        }
+        &.active span:nth-child(1) {
+            animation: burgerone 0.5s linear both;
+        }
+        &.active span:nth-child(2) {
+            animation: nowidth 0.5s linear both;
+        }
+        &.active span:nth-child(3) {
+            animation: burgerthree 0.5s linear both;
+        }
+    }
+}
+
+// animation for display burger
+@keyframes burgerDisplay {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes nowidth {
+    100% {
+        width: 0px;
+    }
+}
+@keyframes burgerone {
+    100% {
+        transform: translateY(8px) rotate(45deg);
+    }
+}
+@keyframes burgerthree {
+    100% {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

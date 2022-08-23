@@ -1,0 +1,22 @@
+// Global Transition Mixins
+@mixin transition($name, $time) {
+    transition: $name $time ease-in-out;
+}
+// Media Mixins
+@mixin media($media) {
+    @if $media == "mobile" {
+        @media (max-width:767px) {
+            @content;
+        }
+    }
+    @else if $media == "medium" {
+        @media (min-width:768px) and (max-width:991px) {
+            @content;
+        }
+    }
+    @if $media == "large" {
+        @media (min-width:992x) {
+            @content;
+        }
+    }
+}

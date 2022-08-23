@@ -1,0 +1,22 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #fbfbfb;
+}
+.btn {
+    background-color: #f9a3ad;
+    padding: 8px 20px;
+    color: $maincolor;
+    @include transition(all, 0.3s);
+    &:hover {
+        background-color: $maincolor;
+        color: #f9a3ad;
+    }
+}
